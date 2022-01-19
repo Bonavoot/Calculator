@@ -67,7 +67,14 @@ let getOps = ops.forEach(opers => {
 
 // Decimal point 
 let decimalPoint = decimal.addEventListener('click', () => {
-    screens.textContent += '.';
+    if (op == '' && num1.includes('.') == false) {
+        num1 += '.';
+        screens.textContent += '.';
+    }
+    else if (op != '' && num2.includes('.') == false) {
+        num2 += '.';
+        screens.textContent += '.';
+    }
 })
 
 // Digit buttons
