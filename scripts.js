@@ -127,5 +127,5 @@ let C = deleteKey.addEventListener('click', () => {
         num2 = num2.substring(0, num2.length - 1);
         screens.textContent = num2;
     }
-})
+});
 
