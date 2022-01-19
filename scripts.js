@@ -17,7 +17,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (parseFloat(b) == 0) {
-        return "Whoops!";
+        return "Ha! Nice try!";
     }
     return parseFloat(a) / parseFloat(b);
 }
@@ -40,13 +40,14 @@ function operate(num1, operator, num2) {
     }
 }
 
-// Button html selectors
+// HTML button selectors
 let ops = document.querySelectorAll('.operator')
 let digits = document.querySelectorAll('.digit')
 let screens = document.querySelector('.screen');
 let equals = document.querySelector('.equals');
 let clear = document.querySelector('#ac');
 let decimal = document.querySelector('.decimal');
+let deleteKey = document.querySelector('#c');
 
 // Operator buttons
 let getOps = ops.forEach(opers => {
@@ -114,3 +115,17 @@ let AC = clear.addEventListener('click', () => {
     op = '';
     screens.textContent = "0";
 });
+
+let C = deleteKey.addEventListener('click', () => {
+    if (op == '') {
+        num1 = num1.substring(0, num1.length - 1);
+        screens.textContent = num1;
+    } else if (op != '' && num2 == '') {
+        op = '';
+        screens.textContent = '';
+    } else {
+        num2 = num2.substring(0, num2.length - 1);
+        screens.textContent = num2;
+    }
+})
+
