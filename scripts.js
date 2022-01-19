@@ -17,7 +17,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (parseFloat(b) == 0) {
-        return "Yikes! No can do!";
+        return "Whoops!";
     }
     return parseFloat(a) / parseFloat(b);
 }
